@@ -4,6 +4,7 @@ from discord.ext import commands
 from ativacao import registrar_comandos, carregar_dados
 from previsao import registrar_previsao
 from logs import registrar_logs
+from keep_alive import keep_alive  # 🔹 importa o keep_alive
 
 # ------------------ Variáveis ------------------
 TOKEN = os.environ.get("DISCORD_TOKEN")  # pega token da variável de ambiente
@@ -63,4 +64,6 @@ async def on_ready():
     await bot.tree.sync()
 
 # ------------------ Rodar bot ------------------
-bot.run(TOKEN)
+if __name__ == "__main__":
+    keep_alive()  # 🔹 mantém vivo no Render
+    bot.run(TOKEN)
