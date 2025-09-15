@@ -2,6 +2,9 @@
 venv/
 .env/
 
+# Docker compose p/ testar o bot com as licenças (chaves)
+docker_compose.yml
+
 # Cache do Python
 __pycache__/
 *.pyc
